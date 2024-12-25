@@ -4,11 +4,11 @@ on:
   push:
     branches:
     - master
-    - dev
+    # - dev
   pull_request:
     branches:
     - master
-    - dev
+    # - dev
 
 jobs:
 
@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go: [ '1.21', '1.22' ]
+        go: [ '1.20','1.21', '1.22' ]
     name: Go ${{ matrix.go }} Test
     steps:
     - uses: actions/checkout@v4
