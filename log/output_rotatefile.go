@@ -6,7 +6,6 @@ import (
 	"io"
 	"os"
 	"path/filepath"
-	"slices"
 	"strings"
 	"sync"
 	"time"
@@ -229,9 +228,9 @@ func (fw *RotateFileWriter) oldLogFiles() ([]logFileInfo, error) {
 		}
 	}
 
-	slices.SortFunc(fileInfos, func(a, b logFileInfo) int {
-		return a.t.Compare(b.t)
-	})
+	// slices.SortFunc(fileInfos, func(a, b logFileInfo) int {
+	// 	return a.t.Compare(b.t)
+	// })
 	return fileInfos, nil
 }
 
